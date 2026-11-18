@@ -1,0 +1,29 @@
+<!--
+  Technique: T1070.001 - Indicator Removal: Clear Windows Event Logs
+  Attacker behavior: clearing Security/System logs to hide traces (anti-forensics)
+  Telemetry: Security Event ID 1102 (Security log cleared),
+             System Event ID 104 (other logs cleared)
+-->
+<group name="windows,defense_evasion,anti_forensics,">
+
+  <!-- Security log cleared: critical, attackers do this during cleanup -->
+  <rule id="100101" level="12">
+    <if_sid>60106</if_sid>
+    <field name="win.system.eventID">^1102$</field>
+    <description>Windows Security Event Log CLEARED - possible anti-forensics activity</description>
+    <mitre>
+      <id>T1070.001</id>
+    </mitre>
+  </rule>
+
+  <!-- System/Application log cleared: suspicious but can be maintenance -->
+  <rule id="100102" level="8">
+    <if_sid>60106</if_sid>
+    <field name="win.system.eventID">^104$</field>
+    <description>Windows Event Log cleared (System/Application) - verify legitimacy</description>
+    <mitre>
+      <id>T1070.001</id>
+    </mitre>
+  </rule>
+
+</group>
