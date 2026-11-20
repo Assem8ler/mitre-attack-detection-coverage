@@ -28,7 +28,7 @@ Methodology:
 | Status | Count | Notes |
 |--------|-------|-------|
 | ✅ Detected (previous labs) | 4 | T1558.003, T1550.002, T1046, T1110 |
-| ✅ Validated (this project) | 1 | T1070.001 |
+| ✅ Validated (this project) | 2 | T1070.001, T1059.001 |
 | 🎯 Planned | 19 | see roadmap below |
 
 ## 🗺️ Technique Roadmap
@@ -36,7 +36,7 @@ Methodology:
 | ID | Technique | Status |
 |----|-----------|--------|
 | T1070.001 | Indicator Removal: Clear Windows Event Logs | ✅ Done |
-| T1059.001 | Command & Scripting: PowerShell | 🎯 Planned |
+| T1059.001 | Command & Scripting: PowerShell | ✅ Done |
 | T1053.005 | Scheduled Task | 🎯 Planned |
 | T1547.001 | Registry Run Keys | 🎯 Planned |
 | T1003.001 | LSASS Memory | 🎯 Planned |
