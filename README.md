@@ -47,7 +47,6 @@ Methodology:
 - `rules/` — custom Wazuh detection rules (XML), grouped by tactic
 - `documentation/` — per-technique analysis & test results
 - `screenshots/` — alert evidence from Wazuh Dashboard
-- `attack-navigator-layers/` — coverage maps (JSON)
 
 ## ⚠️ Disclaimer
 
