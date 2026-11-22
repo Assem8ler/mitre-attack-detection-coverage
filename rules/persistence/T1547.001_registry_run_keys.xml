@@ -1,0 +1,17 @@
+<!--
+  Technique: T1547.001 - Boot or Logon Autostart Execution: Registry Run Keys
+  Existing coverage: built-in rule 91844 (level 12) detects Run key addition via PowerShell 4104
+  Project rule: child of 91844 for validated project alerting and MITRE tagging
+  Follow-up: reg.exe / non-PowerShell modifications via Sysmon EID 13 (built-in 0860-sysmon_id_13)
+-->
+<group name="windows,persistence,registry,">
+
+  <rule id="100401" level="12">
+    <if_sid>91844</if_sid>
+    <description>Registry Run key autostart persistence via PowerShell - project validated rule</description>
+    <mitre>
+      <id>T1547.001</id>
+    </mitre>
+  </rule>
+
+</group>
