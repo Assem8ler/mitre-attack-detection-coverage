@@ -48,6 +48,23 @@ Methodology:
 - `documentation/` — per-technique analysis & test results
 - `screenshots/` — alert evidence from Wazuh Dashboard
 
+## 🚀 How to deploy these rules
+
+To use these detection rules in your own Wazuh environment:
+
+1. Copy the XML files from the `rules/` directory to the rules folder on your Wazuh Manager:
+    sudo cp rules/*/*.xml /var/ossec/etc/rules/
+
+2. Ensure the rules are included in your Wazuh configuration. If you are using a custom file (e.g., `mitre_coverage.xml`), add the following to `/var/ossec/etc/ossec.conf` inside the `<ruleset>` block:
+    <rule_dir>/var/ossec/etc/rules/</rule_dir>
+
+3. Validate the XML syntax before restarting to avoid manager crashes:
+    sudo /var/ossec/bin/wazuh-logtest
+
+4. Restart the Wazuh Manager to apply the new rules:
+    sudo systemctl restart wazuh-manager
+    sudo systemctl status wazuh-manager
+
 ## ⚠️ Disclaimer
 
 All testing is performed in an isolated home lab environment for educational purposes.
