@@ -1,0 +1,18 @@
+<!--
+  Technique: T1003.001 - OS Credential Dumping: LSASS Memory
+  Telemetry: PowerShell Script Block Logging (4104)
+  Chain: generic 4104 base 91815 -> 100501 (standalone rules cannot win on 4104)
+  Follow-up: Sysmon EID 10 (ProcessAccess to lsass.exe) for native dumpers
+-->
+<group name="windows,credential_access,lsass,">
+
+  <rule id="100501" level="12">
+    <if_sid>91815</if_sid>
+    <field name="win.eventdata.scriptBlockText" type="pcre2">(?i)(comsvcs\.dll.{0,60}MiniDump|MiniDumpWriteDump|Out-Minidump|procdump.{0,80}lsass|lsass\.dmp)</field>
+    <description>LSASS memory dump attempt via PowerShell - credential dumping (T1003.001)</description>
+    <mitre>
+      <id>T1003.001</id>
+    </mitre>
+  </rule>
+
+</group>
