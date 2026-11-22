@@ -28,7 +28,7 @@ Methodology:
 | Status | Count | Notes |
 |--------|-------|-------|
 | ✅ Detected (previous labs) | 4 | T1558.003, T1550.002, T1046, T1110 |
-| ✅ Validated (this project) | 3 | T1070.001, T1059.001, T1053.005 |
+| ✅ Validated (this project) | 4 | T1070.001, T1059.001, T1053.005, T1547.001 |
 | 🎯 Planned | 19 | see roadmap below |
 
 ## 🗺️ Technique Roadmap
