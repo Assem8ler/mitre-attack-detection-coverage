@@ -1,0 +1,26 @@
+<!--
+  Technique: T1053.005 - Scheduled Task/Job: Scheduled Task
+  Telemetry: Security Event ID 4698 (task created)
+  Prerequisite: audit "Other Object Access Events" success enabled
+  Chain: built-in 60228 -> 100301 -> 100302
+-->
+<group name="windows,persistence,scheduled_task,">
+
+  <rule id="100301" level="6">
+    <if_sid>60228</if_sid>
+    <description>Scheduled task created - persistence mechanism installed</description>
+    <mitre>
+      <id>T1053.005</id>
+    </mitre>
+  </rule>
+
+  <rule id="100302" level="10">
+    <if_sid>100301</if_sid>
+    <field name="win.eventdata.taskContent">powershell|cmd\.exe|wscript|cscript|mshta|curl\.exe|bitsadmin|Invoke-WebRequest|Start-BitsTransfer|DownloadString</field>
+    <description>Scheduled task executes interpreter or downloads content - high persistence risk</description>
+    <mitre>
+      <id>T1053.005</id>
+    </mitre>
+  </rule>
+
+</group>
