@@ -38,7 +38,7 @@ Methodology:
 | T1070.001 | Indicator Removal: Clear Windows Event Logs | ✅ Done |
 | T1059.001 | Command & Scripting: PowerShell | ✅ Done |
 | T1053.005 | Scheduled Task | ✅ Done |
-| T1547.001 | Registry Run Keys | 🎯 Planned |
+| T1547.001 | Registry Run Keys | ✅ Done |
 | T1003.001 | LSASS Memory | 🎯 Planned |
 | T1021.002 | SMB/Windows Admin Shares | 🎯 Planned |
 
