@@ -1,0 +1,27 @@
+<!--
+  Technique: T1059.001 - Command and Scripting Interpreter: PowerShell
+  Telemetry: Security Event ID 1 (Process Creation with suspicious args) & 4104 (Script Block)
+  Chain: built-in 61000 -> 100201 (command line), built-in 91837 -> 100202 (script block)
+-->
+<group name="windows,execution,powershell,">
+
+  <rule id="100201" level="10">
+    <if_sid>61000</if_sid>
+    <field name="win.system.eventID">^1$</field>
+    <field name="win.eventdata.commandLine">-enc|-encodedcommand|-nop|-noprofile|-exec bypass|-w hidden|-windowstyle hidden</field>
+    <description>Suspicious PowerShell command line - encoded command or policy bypass attempt</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+
+  <rule id="100202" level="10">
+    <if_sid>91837</if_sid>
+    <field name="win.eventdata.scriptBlockText">IEX|Invoke-Expression|Net.WebClient|DownloadString|DownloadFile</field>
+    <description>PowerShell downloading content from internet - possible malware delivery</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+
+</group>
