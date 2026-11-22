@@ -1,18 +1,16 @@
 <!--
   Technique: T1021.002 - Remote Services: SMB/Windows Admin Shares
   Telemetry: Security Event ID 5140 (network share accessed)
-  Chain: built-in 5140 (level 2) -> 100601 (level 10)
-  Detects: access to C$, ADMIN$, IPC$ shares (lateral movement via admin shares)
+  Chain: built-in 67017 -> 100601 (5140 is intercepted by 67017 first)
+  Detects: access to C$, ADMIN$, IPC$ shares (lateral movement)
 -->
 <group name="windows,lateral_movement,smb,">
-
   <rule id="100601" level="10">
-    <if_sid>5140</if_sid>
-    <field name="win.eventdata.shareName">\\*\\(C\$|ADMIN\$|IPC\$)</field>
+    <if_sid>67017</if_sid>
+    <field name="win.eventdata.shareName" type="pcre2">(?i)(C\$|ADMIN\$|IPC\$)</field>
     <description>Access to administrative SMB share - lateral movement via admin shares (T1021.002)</description>
     <mitre>
       <id>T1021.002</id>
     </mitre>
   </rule>
-
 </group>
