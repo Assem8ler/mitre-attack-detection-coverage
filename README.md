@@ -28,7 +28,7 @@ Methodology:
 | Status | Count | Notes |
 |--------|-------|-------|
 | ✅ Detected (previous labs) | 4 | T1558.003, T1550.002, T1046, T1110 |
-| ✅ Validated (this project) | 4 | T1070.001, T1059.001, T1053.005, T1547.001 |
+| ✅ Validated (this project) | 5 | T1070.001, T1059.001, T1053.005, T1547.001, T1003.001 |
 | 🎯 Planned | 19 | see roadmap below |
 
 ## 🗺️ Technique Roadmap
@@ -39,7 +39,7 @@ Methodology:
 | T1059.001 | Command & Scripting: PowerShell | ✅ Done |
 | T1053.005 | Scheduled Task | ✅ Done |
 | T1547.001 | Registry Run Keys | ✅ Done |
-| T1003.001 | LSASS Memory | 🎯 Planned |
+| T1003.001 | LSASS Memory | ✅ Done |
 | T1021.002 | SMB/Windows Admin Shares | 🎯 Planned |
 
 ## 📁 Structure
