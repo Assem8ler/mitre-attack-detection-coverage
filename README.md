@@ -47,6 +47,7 @@ Methodology:
 - `rules/` — custom Wazuh detection rules (XML), grouped by tactic
 - `documentation/` — per-technique analysis & test results
 - `screenshots/` — alert evidence from Wazuh Dashboard
+- `attack-navigator-layers/` — ATT&CK Navigator coverage map (JSON)
 
 ## 🚀 How to deploy these rules
 
@@ -68,6 +69,12 @@ To use these detection rules in your own Wazuh environment:
 
     sudo systemctl restart wazuh-manager
     sudo systemctl status wazuh-manager
+
+## 🗺️ Coverage matrix
+
+Open `attack-navigator-layers/coverage.json` in [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) to view the interactive coverage map.
+
+![Coverage matrix](screenshots/coverage_matrix.png)
     
 ## ⚠️ Disclaimer
 
