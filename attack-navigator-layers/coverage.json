@@ -17,11 +17,11 @@
     { "techniqueID": "T1558.003", "score": 60, "color": "#a1d99b", "comment": "AD lab: rule 100012 (4769 RC4)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
     { "techniqueID": "T1550.002", "score": 60, "color": "#a1d99b", "comment": "AD lab: rule 100031 (NTLM PtH)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
     { "techniqueID": "T1046", "score": 60, "color": "#a1d99b", "comment": "Previous lab: rules 100001->100002 (WFP 5152)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1110", "score": 60, "color": "#a1d99b", "comment": "Previous lab: built-in 18130->40111->18116 (4625)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
+    { "techniqueID": "T1110.001", "score": 60, "color": "#a1d99b", "comment": "Previous lab: built-in 18130->40111->18116 (4625)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
     { "techniqueID": "T1087.002", "score": 60, "color": "#a1d99b", "comment": "Previous lab: built-in Sysmon 92031/92033 (discovery)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1078", "score": 0, "color": "#bdbdbd", "comment": "Planned", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1055", "score": 0, "color": "#bdbdbd", "comment": "Planned", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1027", "score": 0, "color": "#bdbdbd", "comment": "Planned", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false }
+    { "techniqueID": "T1078.004", "score": 0, "color": "#bdbdbd", "comment": "Planned", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
+    { "techniqueID": "T1055.001", "score": 0, "color": "#bdbdbd", "comment": "Planned", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
+    { "techniqueID": "T1027.002", "score": 0, "color": "#bdbdbd", "comment": "Planned", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false }
   ],
   "gradient": { "colors": ["#ff6666ff", "#ffe766ff", "#8ec843ff"], "minValue": 0, "maxValue": 100 },
   "legendItems": [
