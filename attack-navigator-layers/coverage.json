@@ -1,51 +1,262 @@
 {
   "name": "Wazuh Detection Coverage - Assem8ler",
-  "versions": { "attack": "20", "navigator": "5.3.2", "layer": "4.5" },
+  "versions": {
+    "attack": "20",
+    "navigator": "5.3.2",
+    "layer": "4.5"
+  },
   "domain": "enterprise-attack",
   "description": "Custom Wazuh detection coverage: 6 techniques validated in this project, 5 detected in previous labs, 3 planned.",
-  "filters": { "platforms": ["Windows"] },
-  "sorting": 0,
-  "layout": { "layout": "side", "aggregateFunction": "average", "showID": true, "showName": true, "showAggregateScores": false, "countUnscored": false },
-  "hideDisabled": false,
+  "filters": {
+    "platforms": [
+      "Windows"
+    ]
+  },
   "techniques": [
-    { "techniqueID": "T1070", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1059", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1053", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1547", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1003", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1021", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1558", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1550", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1110", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1087", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1078", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1055", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1027", "showSubtechniques": true, "enabled": true, "metadata": [], "links": [] },
-    { "techniqueID": "T1070.001", "score": 100, "color": "#31a354", "comment": "Validated: rules 100101/100102 (Security 1102/104)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1059.001", "score": 100, "color": "#31a354", "comment": "Validated: rules 100201/100202 (4104 script block)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1053.005", "score": 100, "color": "#31a354", "comment": "Validated: rules 100301->100302 (Security 4698)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1547.001", "score": 100, "color": "#31a354", "comment": "Validated: rule 100401 (child of 91844)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1003.001", "score": 100, "color": "#31a354", "comment": "Validated: rule 100501 (child of 91815, comsvcs MiniDump)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1021.002", "score": 100, "color": "#31a354", "comment": "Validated: rule 100601 (child of 67017, admin shares)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1558.003", "score": 60, "color": "#a1d99b", "comment": "AD lab: rule 100012 (4769 RC4)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1550.002", "score": 60, "color": "#a1d99b", "comment": "AD lab: rule 100031 (NTLM PtH)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1046", "score": 60, "color": "#a1d99b", "comment": "Previous lab: rules 100001->100002 (WFP 5152)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1110.001", "score": 60, "color": "#a1d99b", "comment": "Previous lab: built-in 18130->40111->18116 (4625)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1087.002", "score": 60, "color": "#a1d99b", "comment": "Previous lab: built-in Sysmon 92031/92033 (discovery)", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1078.003", "score": 0, "color": "#bdbdbd", "comment": "Planned: local account abuse detection", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1055.001", "score": 0, "color": "#bdbdbd", "comment": "Planned: DLL injection detection", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false },
-    { "techniqueID": "T1027.002", "score": 0, "color": "#bdbdbd", "comment": "Planned: software packing detection", "enabled": true, "metadata": [], "links": [], "showSubtechniques": false }
+    {
+      "techniqueID": "T1070",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1059",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1053",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1547",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1003",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1021",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1558",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1550",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1110",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1087",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1078",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1055",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1027",
+      "showSubtechniques": true,
+      "enabled": true,
+      "metadata": [],
+      "links": []
+    },
+    {
+      "techniqueID": "T1070.001",
+      "score": 100,
+      "color": "#31a354",
+      "comment": "Validated: Security 1102 / 104 log-clearing events.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1059.001",
+      "score": 100,
+      "color": "#31a354",
+      "comment": "Validated: Sysmon 4104 script-block logging.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1053.005",
+      "score": 100,
+      "color": "#31a354",
+      "comment": "Validated: Security 4698 task creation chain.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1547.001",
+      "score": 100,
+      "color": "#31a354",
+      "comment": "Validated: child of built-in 91844 (Run-key write).",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1003.001",
+      "score": 100,
+      "color": "#31a354",
+      "comment": "Validated: child of 91815, comsvcs MiniDump access.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1021.002",
+      "score": 100,
+      "color": "#31a354",
+      "comment": "Validated: child of 67017, admin-share access.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1558.003",
+      "score": 60,
+      "color": "#a1d99b",
+      "comment": "AD lab: Security 4769 with RC4 ticketOptions 0x40810000, level 10.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1550.002",
+      "score": 60,
+      "color": "#a1d99b",
+      "comment": "AD lab: NTLM type-3 remote logon (4624), level 12.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1046",
+      "score": 60,
+      "color": "#a1d99b",
+      "comment": "Previous lab: WFP 5152 filtering-platform connection drops.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1110.001",
+      "score": 60,
+      "color": "#a1d99b",
+      "comment": "Previous lab: built-in chain on Security 4625 failures.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1087.002",
+      "score": 60,
+      "color": "#a1d99b",
+      "comment": "Previous lab: built-in Sysmon discovery rules (net user /domain).",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1078.003",
+      "score": 0,
+      "color": "#bdbdbd",
+      "comment": "Planned: local-account abuse detection.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1055.001",
+      "score": 0,
+      "color": "#bdbdbd",
+      "comment": "Planned: DLL injection detection (Sysmon 8 / 10).",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    },
+    {
+      "techniqueID": "T1027.002",
+      "score": 0,
+      "color": "#bdbdbd",
+      "comment": "Planned: packed-binary detection.",
+      "enabled": true,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": false
+    }
   ],
-  "gradient": { "colors": ["#ff6666ff", "#ffe766ff", "#8ec843ff"], "minValue": 0, "maxValue": 100 },
   "legendItems": [
-    { "label": "Validated in this project", "color": "#31a354" },
-    { "label": "AD purple team lab", "color": "#a1d99b" },
-    { "label": "Planned", "color": "#bdbdbd" }
-  ],
-  "metadata": [],
-  "links": [],
-  "showTacticRowBackground": false,
-  "tacticRowBackground": "#dddddd",
-  "selectTechniquesAcrossTactics": true,
-  "selectSubtechniquesWithParent": false
+    {
+      "label": "Validated in this project",
+      "color": "#31a354"
+    },
+    {
+      "label": "AD purple team lab",
+      "color": "#a1d99b"
+    },
+    {
+      "label": "Planned",
+      "color": "#bdbdbd"
+    }
+  ]
 }
