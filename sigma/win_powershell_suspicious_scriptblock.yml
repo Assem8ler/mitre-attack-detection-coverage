@@ -1,0 +1,30 @@
+title: Suspicious PowerShell Script Block Content
+id: 3b9e6d44-1c7a-4f58-8d20-6a4f9c3e7b85
+status: test
+description: Detects PowerShell script blocks (Event 4104) containing interpreter abuse keywords, matching the validated Wazuh rules 100201/100202.
+references:
+  - https://github.com/Assem8ler/mitre-attack-detection-coverage/tree/main/rules
+author: Assem8ler
+date: 2026-11-27
+tags:
+  - attack.execution
+  - attack.t1059.001
+logsource:
+  product: windows
+  service: powershell
+  definition: 'Requirements: ScriptBlock logging enabled (4104)'
+detection:
+  selection:
+    EventID: 4104
+    ScriptBlockText|contains:
+      - 'DownloadString'
+      - 'Invoke-Expression'
+      - 'IEX('
+      - 'EncodedCommand'
+      - 'Net.WebClient'
+      - 'Reflection.Assembly'
+      - 'Add-Type'
+  condition: selection
+falsepositives:
+  - Administrative deployment scripts using the same cmdlets
+level: medium
