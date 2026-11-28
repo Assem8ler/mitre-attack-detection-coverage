@@ -1,0 +1,21 @@
+title: Windows Event Log Cleared
+id: 7f3c1a92-4b8e-4d21-9a6c-2e5d8b0f4c17
+status: test
+description: Detects clearing of Windows event logs (Security 1102; System 104 is the companion channel used by the Wazuh counterpart rule).
+references:
+  - https://github.com/Assem8ler/mitre-attack-detection-coverage/tree/main/rules
+author: Assem8ler
+date: 2026-11-27
+tags:
+  - attack.defense_evasion
+  - attack.t1070.001
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 1102
+  condition: selection
+falsepositives:
+  - Legitimate log rotation by administrators during maintenance
+level: high
