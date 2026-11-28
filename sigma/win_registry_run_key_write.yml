@@ -1,0 +1,26 @@
+title: Registry Run Key Value Written
+id: 5e8a3c27-9d1f-4b66-a4e8-1c7b5d9f2a64
+status: test
+description: Detects writes to autostart Run/RunOnce registry keys (Sysmon 12/13/14), the portable twin of Wazuh rule 100401 (child of 91844).
+references:
+  - https://github.com/Assem8ler/mitre-attack-detection-coverage/tree/main/rules
+author: Assem8ler
+date: 2026-11-27
+tags:
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1547.001
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: [12, 13, 14]
+    TargetObject|contains:
+      - '\Software\Microsoft\Windows\CurrentVersion\Run'
+      - '\Software\Microsoft\Windows\CurrentVersion\RunOnce'
+      - '\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Run'
+  condition: selection
+falsepositives:
+  - Legitimate software registering autostart entries during installation
+level: medium
