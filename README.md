@@ -72,9 +72,26 @@ To use these detection rules in your own Wazuh environment:
 
 ## 🗺️ Coverage matrix
 
-Open `attack-navigator-layers/coverage.json` in [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/) to view the interactive coverage map.
-
 ![Coverage matrix](screenshots/coverage_matrix.png)
+
+- **Live interactive map:** [assem8ler.github.io/mitre-attack-detection-coverage/coverage-explorer.html](https://assem8ler.github.io/mitre-attack-detection-coverage/coverage-explorer.html)
+- **Navigator layer:** [`attack-navigator-layers/coverage.json`](attack-navigator-layers/coverage.json) — open in [ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/)
+- **Explorer source:** [`docs/coverage-explorer.html`](docs/coverage-explorer.html)
+
+Legend: dark green = custom Wazuh rule validated with attack + benign tests in this project · light green = detected in the AD purple team lab · grey = planned.
+
+## 🧾 Portable detections (Sigma)
+
+Every validated technique also ships as a vendor-agnostic [Sigma](https://github.com/SigmaHQ/sigma) rule in [`sigma/`](sigma/), so the detections travel beyond Wazuh:
+
+| Sigma rule | Technique | Wazuh twin |
+|---|---|---|
+| [`win_security_clear_windows_event_logs.yml`](sigma/win_security_clear_windows_event_logs.yml) | T1070.001 | 100101 / 100102 |
+| [`win_powershell_suspicious_scriptblock.yml`](sigma/win_powershell_suspicious_scriptblock.yml) | T1059.001 | 100201 / 100202 |
+| [`win_scheduled_task_creation_suspicious.yml`](sigma/win_scheduled_task_creation_suspicious.yml) | T1053.005 | 100301 → 100302 |
+| [`win_registry_run_key_write.yml`](sigma/win_registry_run_key_write.yml) | T1547.001 | 100401 |
+| [`win_lsass_memory_comsvcs_dump.yml`](sigma/win_lsass_memory_comsvcs_dump.yml) | T1003.001 | 100501 |
+| [`win_admin_share_remote_access.yml`](sigma/win_admin_share_remote_access.yml) | T1021.002 | 100601 |
     
 ## ⚠️ Disclaimer
 
