@@ -1,0 +1,28 @@
+title: LSASS Memory Access Via Comsvcs MiniDump
+id: 2a6f9b83-7c4d-4e15-9f37-5b8c1e6d0a92
+status: test
+description: Detects process access to lsass.exe with full-memory rights or comsvcs.dll MiniDump call trace (Sysmon 10), matching Wazuh rule 100501 (child of 91815).
+references:
+  - https://github.com/Assem8ler/mitre-attack-detection-coverage/tree/main/rules
+author: Assem8ler
+date: 2026-11-27
+tags:
+  - attack.credential_access
+  - attack.t1003.001
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 10
+    TargetImage|endswith: '\lsass.exe'
+  access:
+    GrantedAccess|contains:
+      - '0x1FFFFF'
+      - '0x1010'
+  trace:
+    CallTrace|contains: 'comsvcs'
+  condition: selection and (access or trace)
+falsepositives:
+  - EDR or backup agents opening LSASS with broad rights
+level: high
