@@ -1,0 +1,24 @@
+title: Remote Access To Administrative Share
+id: 8d1c4f70-3e9a-4a27-b6d5-9f2e7c8b1a43
+status: test
+description: Detects network logon sessions against administrative shares (Security 5140/5145 on ADMIN$/C$), the portable twin of Wazuh rule 100601 (child of 67017).
+references:
+  - https://github.com/Assem8ler/mitre-attack-detection-coverage/tree/main/rules
+author: Assem8ler
+date: 2026-11-27
+tags:
+  - attack.lateral_movement
+  - attack.t1021.002
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: [5140, 5145]
+    ShareName|contains:
+      - 'ADMIN$'
+      - 'C$'
+  condition: selection
+falsepositives:
+  - Centralised backup or configuration management using admin shares
+level: medium
