@@ -1,0 +1,31 @@
+title: Suspicious Scheduled Task Created
+id: 9c2d7e61-5a4b-4c83-b1f9-8d6e2a7c4f30
+status: test
+description: Detects creation of scheduled tasks (Security 4698) whose content references interpreters or downloaders, matching validated Wazuh chain 100301 -> 100302.
+references:
+  - https://github.com/Assem8ler/mitre-attack-detection-coverage/tree/main/rules
+author: Assem8ler
+date: 2026-11-27
+tags:
+  - attack.execution
+  - attack.persistence
+  - attack.privilege_escalation
+  - attack.t1053.005
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4698
+  keywords:
+    - 'powershell'
+    - 'cmd /c'
+    - 'mshta'
+    - 'wscript'
+    - 'cscript'
+    - 'rundll32'
+    - 'bitsadmin'
+  condition: selection and keywords
+falsepositives:
+  - Software installers registering legitimate maintenance tasks
+level: medium
